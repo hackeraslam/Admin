@@ -1,7 +1,7 @@
 import "./new.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
+
 import { useState } from "react";
 import Axios from "axios";
 
@@ -10,7 +10,7 @@ import { useLocation } from "react-router-dom";
 const Edit= ({ inputs, title }) => {
   const location = useLocation();
   const {data} = location.state;
-  const [file, setFile] = useState();
+ 
   const [name, setName] = useState(data.name);
   const [username, setUsername] = useState(data.username);
   const [phone, setPhone] = useState(data.phone);
@@ -35,7 +35,7 @@ const Edit= ({ inputs, title }) => {
       Axios.put("http://localhost:3001/update", {
       id: data._id,
       name: name,
-      username, username,
+      username:username,
       email: email,
       phone: phone,
       address: address,

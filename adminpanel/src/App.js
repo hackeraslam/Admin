@@ -8,7 +8,7 @@ import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
-import Model from "./components/Model/Model";
+
 import Edit from './pages/Edit/Edit';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
             
             <Route path="users">
               <Route index element={<List />} />
-              <Route path=":userId" element={<Model />} />
+             
               <Route
                 path="new"
                 element={<New inputs={userInputs} title="Add New User" />}

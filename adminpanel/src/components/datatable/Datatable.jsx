@@ -28,7 +28,7 @@ const Datatable = () => {
   };
   
   
-  const [userdata, setUserdata] = ([]);
+ 
 
   useEffect(()=>{
     Axios.get("http://localhost:3001/userslist")
