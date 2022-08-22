@@ -3,8 +3,8 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
+
 import Axios from "axios";
-import axios from "axios";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
@@ -35,7 +35,7 @@ const New = ({ inputs, title }) => {
     }
 
     try{
-      await axios.post("http://localhost:3001/users", databody);
+      await Axios.post("http://localhost:3001/users", databody);
       document.getElementById("new_user").reset();
       alert("User Created Sucessfully");
       window.location.replace("/users")
