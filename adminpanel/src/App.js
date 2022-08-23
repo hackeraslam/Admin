@@ -9,7 +9,7 @@ import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 
-import Edit from './pages/Edit/Edit';
+import Edit from "./pages/Edit/Edit";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -21,18 +21,15 @@ function App() {
           <Route path="/">
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
-            
+
             <Route path="users">
               <Route index element={<List />} />
-             
+
               <Route
                 path="new"
                 element={<New inputs={userInputs} title="Add New User" />}
               />
-              <Route
-                path="edit"
-                element={<Edit/>}
-              />
+              <Route path="edit" element={<Edit />} />
             </Route>
             <Route path="products">
               <Route index element={<List />} />

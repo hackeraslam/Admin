@@ -1,9 +1,8 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns} from "../../datatablesource";
+import { userColumns } from "../../datatablesource";
 import { Link } from "react-router-dom";
-import Axios from 'axios';
-
+import Axios from "axios";
 
 import { useState, useEffect } from "react";
 
@@ -12,39 +11,25 @@ const Datatable = () => {
 
   const handleDelete = (_id) => {
     console.log("Clicked Delet");
-   
-    try{
-    Axios.delete(`http://localhost:3001/delete/${_id}`)
-    setData(data.filter((item) => item._id !== _id));
-    console.log("Deleted");
 
+    try {
+      Axios.delete(`http://localhost:3001/delete/${_id}`);
+      setData(data.filter((item) => item._id !== _id));
+      console.log("Deleted");
+    } catch (err) {
+      console.log(err);
     }
-    catch(err)
-    {
-        console.log(err);
-    }
-  
-    
   };
-  
-  
- 
 
-  useEffect(()=>{
-    Axios.get("http://localhost:3001/userslist")
-    .then((response) => {
-      
-      setData(response.data);
-      
-      
-    })
-    .catch((err)=> {
-      alert(err);
-    })
-
-  },[])
-
-  
+  useEffect(async () => {
+    Axios.get("https://admin-panel11.herokuapp.com/userslist")
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  }, []);
 
   const actionColumn = [
     {
@@ -54,7 +39,11 @@ const Datatable = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/users/edit"  state={{data: params.row}}style={{ textDecoration: "none" }}>
+            <Link
+              to="/users/edit"
+              state={{ data: params.row }}
+              style={{ textDecoration: "none" }}
+            >
               <div className="viewButton">Edit</div>
             </Link>
             <div
