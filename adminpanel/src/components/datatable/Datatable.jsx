@@ -21,7 +21,7 @@ const Datatable = () => {
     }
   };
 
-  useEffect(async () => {
+  useEffect(() => {
     Axios.get("https://admin-panel11.herokuapp.com/userslist")
       .then((response) => {
         setData(response.data);
