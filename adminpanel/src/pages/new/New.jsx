@@ -5,6 +5,7 @@ import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUpload
 import { useState } from "react";
 
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
@@ -15,7 +16,7 @@ const New = ({ inputs, title }) => {
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
-
+  const navigate = useNavigate();
   async function addToList(e) {
     e.preventDefault();
     let databody = {
@@ -32,7 +33,8 @@ const New = ({ inputs, title }) => {
       await axios.post("https://admin-panel11.herokuapp.com/users", databody);
       document.getElementById("new_user").reset();
       alert("User Created Sucessfully");
-      window.location.replace("/users");
+      // window.location.replace("/users");
+      navigate("/users");
     } catch (err) {
       alert(err);
     }
