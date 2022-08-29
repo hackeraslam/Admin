@@ -3,9 +3,10 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebse";
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState("");
@@ -17,6 +18,7 @@ const New = ({ inputs, title }) => {
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
   const navigate = useNavigate();
+
   async function addToList(e) {
     e.preventDefault();
     let databody = {
@@ -30,10 +32,17 @@ const New = ({ inputs, title }) => {
     };
 
     try {
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(user);
+    } catch (err) {
+      console.log(err);
+    }
+
+    try {
       await axios.post("https://admin-panel11.herokuapp.com/users", databody);
       document.getElementById("new_user").reset();
       alert("User Created Sucessfully");
-      // window.location.replace("/users");
+
       navigate("/users");
     } catch (err) {
       alert(err);
