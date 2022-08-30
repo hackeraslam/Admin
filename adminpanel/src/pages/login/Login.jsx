@@ -14,9 +14,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
   const provider = new GoogleAuthProvider();
-  useEffect(() => {
-    auth.signOut();
-  });
 
   const handleGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {});
