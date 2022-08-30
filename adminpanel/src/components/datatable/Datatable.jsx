@@ -10,12 +10,9 @@ const Datatable = () => {
   const [data, setData] = useState([]);
 
   const handleDelete = (_id) => {
-    console.log("Clicked Delet");
-
     try {
       Axios.delete(`https://adminserverr.herokuapp.com/delete/${_id}`);
       setData(data.filter((item) => item._id !== _id));
-      console.log("Deleted");
     } catch (err) {
       console.log(err);
     }
