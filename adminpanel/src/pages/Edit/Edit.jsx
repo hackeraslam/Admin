@@ -26,7 +26,7 @@ const Edit = ({ inputs, title }) => {
   const updateData = () => {
     try {
       window.open("/users");
-      Axios.put("https://admin-panel11.herokuapp.com/update", {
+      Axios.put("https://adminserverr.herokuapp.com/update", {
         id: data._id,
         name: name,
         username: username,

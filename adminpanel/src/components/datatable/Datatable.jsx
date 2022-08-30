@@ -13,7 +13,7 @@ const Datatable = () => {
     console.log("Clicked Delet");
 
     try {
-      Axios.delete(`http://localhost:3001/delete/${_id}`);
+      Axios.delete(`https://adminserverr.herokuapp.com/delete/${_id}`);
       setData(data.filter((item) => item._id !== _id));
       console.log("Deleted");
     } catch (err) {
@@ -22,7 +22,7 @@ const Datatable = () => {
   };
 
   useEffect(() => {
-    Axios.get("https://admin-panel11.herokuapp.com/userslist")
+    Axios.get("https://adminserverr.herokuapp.com/userslist")
       .then((response) => {
         setData(response.data);
       })

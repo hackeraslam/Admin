@@ -39,7 +39,7 @@ const New = ({ inputs, title }) => {
     }
 
     try {
-      await axios.post("https://admin-panel11.herokuapp.com/users", databody);
+      await axios.post("https://adminserverr.herokuapp.com/users", databody);
       document.getElementById("new_user").reset();
       alert("User Created Sucessfully");
 
