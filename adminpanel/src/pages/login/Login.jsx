@@ -28,7 +28,7 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (err) {
-      console.log(err);
+      setError(true);
     }
   };
   return (
