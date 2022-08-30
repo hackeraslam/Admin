@@ -13,16 +13,24 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
+  let navv = useNavigate();
   const provider = new GoogleAuthProvider();
 
   const handleGoogle = () => {
-    signInWithPopup(auth, provider).then((result) => {});
-    navigate("/");
+    try {
+      signInWithPopup(auth, provider).then((result) => {
+        navv("/");
+      });
+    } catch (err) {
+      alert(err);
+    }
   };
 
   const handleLogin = () => {
     try {
-      signInWithEmailAndPassword(auth, email, password);
+      signInWithEmailAndPassword(auth, email, password).then(() => {
+        navigate("/");
+      });
       navigate("/");
     } catch (err) {
       setError(true);
