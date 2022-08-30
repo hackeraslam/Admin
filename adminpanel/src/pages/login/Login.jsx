@@ -7,8 +7,6 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { auth } from "../../firebse";
-import { Nav } from "reactstrap";
-import { getOptionGroupUnstyledUtilityClass } from "@mui/base";
 
 const Login = () => {
   const [error, setError] = useState(false);
