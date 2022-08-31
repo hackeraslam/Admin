@@ -11,6 +11,7 @@ import { DarkModeContext } from "./context/darkModeContext";
 
 import Edit from "./pages/Edit/Edit";
 import PrivateRoutes from "./pages/PrivateRoutes";
+import Signup from "./pages/Signup/Signup";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -45,6 +46,7 @@ function App() {
               </Route>
             </Route>
           </Route>
+          <Route element={<Signup />} path="/signup" />
           <Route element={<Login />} path="/login" />
         </Routes>
       </BrowserRouter>

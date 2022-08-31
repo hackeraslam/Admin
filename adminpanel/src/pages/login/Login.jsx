@@ -13,6 +13,11 @@ const Login = () => {
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
   let navv = useNavigate();
+  let create = useNavigate();
+  const handleCreate = () => {
+    create("/signup");
+  };
+
   const provider = new GoogleAuthProvider();
 
   const popup = () => {
@@ -58,7 +63,9 @@ const Login = () => {
         <div className="login-btn" onClick={handleLogin}>
           Login
         </div>
-        <div className="login-btn signup">Create Account</div>
+        <div className="login-btn signup" onClick={handleCreate}>
+          Create Account
+        </div>
 
         <p className="text">Or login using</p>
 
