@@ -9,52 +9,68 @@ import {
 import { auth } from "../../firebse";
 
 const Login = () => {
-  const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
   let navv = useNavigate();
   const provider = new GoogleAuthProvider();
 
+  const popup = () => {
+    showPopup("login-popup");
+    setTimeout(() => showPopup("hide"), 3000);
+  };
   const handleGoogle = () => {
     try {
       signInWithPopup(auth, provider).then((result) => {
         navv("/");
       });
     } catch (err) {
-      alert(err);
+      popup();
     }
   };
 
+  const [popupStyle, showPopup] = useState("hide");
+
   const handleLogin = () => {
-    try {
-      signInWithEmailAndPassword(auth, email, password).then(() => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((firebaseUser) => {
         navigate("/");
+      })
+      .catch((err) => {
+        popup();
       });
-      navigate("/");
-    } catch (err) {
-      setError(true);
-    }
   };
   return (
-    <div className="login">
-      <form onSubmit={handleLogin}>
+    <div className="page">
+      <div className="cover">
+        <h1>Login</h1>
         <input
-          type="email"
-          placeholder="email"
+          type="text"
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="username"
         />
         <input
           type="password"
-          placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="password"
         />
-        <button type="submit">Login</button>
-        <button className="google" onClick={handleGoogle}>
-          Login With Google
-        </button>
-        {error && <span>Wrong email or password!</span>}
-      </form>
+
+        <div className="login-btn" onClick={handleLogin}>
+          Login
+        </div>
+
+        <p className="text">Or login using</p>
+
+        <div className="alt-login">
+          <div className="facebook"></div>
+          <div className="google" onClick={handleGoogle}></div>
+        </div>
+
+        <div className={popupStyle}>
+          <h3>Login Failed</h3>
+          <p>Username or password incorrect</p>
+        </div>
+      </div>
     </div>
   );
 };
