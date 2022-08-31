@@ -3,6 +3,7 @@ import { useState } from "react";
 import { auth } from "../../firebse";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import "./Signup.css";
 
 import axios from "axios";
 function Signup() {
@@ -58,7 +59,7 @@ function Signup() {
 
   return (
     <div className="page">
-      <div className="cover">
+      <div className="cover-signup">
         <h1>Create Account</h1>
         <input
           type="text"

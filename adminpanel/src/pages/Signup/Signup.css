@@ -16,10 +16,10 @@
   );
 }
 
-.cover {
+.cover-signup {
   background-color: white;
   width: 35em;
-  height: 45em;
+  height: 43em;
   position: relative;
   border-radius: 1em;
   box-shadow: 0 0.188em 1.55em rgb(156, 156, 156);
