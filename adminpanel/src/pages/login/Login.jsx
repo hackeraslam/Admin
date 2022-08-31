@@ -58,6 +58,7 @@ const Login = () => {
         <div className="login-btn" onClick={handleLogin}>
           Login
         </div>
+        <div className="login-btn signup">Create Account</div>
 
         <p className="text">Or login using</p>
 
