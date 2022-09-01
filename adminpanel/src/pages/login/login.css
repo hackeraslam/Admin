@@ -30,6 +30,7 @@
   width: 80%;
   height: 3em;
   display: flex;
+  margin-bottom: 10px;
   justify-content: center;
 }
 
@@ -37,7 +38,6 @@
   width: 45%;
   height: 90%;
   border-radius: 0.25em;
-  background-color: rgb(21, 156, 246);
   background-position: left;
   background-size: contain;
   text-align: center;

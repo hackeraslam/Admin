@@ -50,12 +50,12 @@ const Login = () => {
       <div className="cover">
         <h1>Login</h1>
         <div className="alt-loginn">
-          <a href="#" class="facebook btn">
+          <div class="facebook btn">
             <i class="fa-brands fa-square-facebook icon"></i> Facebook
-          </a>
-          <a href="#" class="google btn" onClick={handleGoogle}>
+          </div>
+          <div class="google btn" onClick={handleGoogle}>
             <i class="fab fa-google icon"></i>Google
-          </a>
+          </div>
         </div>
         <h4 className="upper-Text">Email</h4>
         <input
