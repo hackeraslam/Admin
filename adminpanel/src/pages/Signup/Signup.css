@@ -47,13 +47,6 @@
   cursor: pointer;
 }
 
-.google {
-  background-image: url("../../icons/google.png");
-}
-.facebook {
-  background-image: url("../../icons/facebook.png");
-}
-
 input {
   border: none;
   background-color: rgb(229, 226, 226);
@@ -62,7 +55,7 @@ input {
   border-radius: 0.25em;
   text-align: left;
   padding: 2em;
-  margin: 5px;
+  margin: 10px;
 }
 
 input:focus {

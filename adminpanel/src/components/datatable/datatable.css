@@ -30,7 +30,7 @@
   height: 32px;
   border-radius: 50%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   margin-right: 20px;
 }
 .datatable .cellWithStatus {
@@ -67,4 +67,4 @@
   color: crimson;
   border: 1px dotted rgba(220, 20, 60, 0.6);
   cursor: pointer;
-} /*# sourceMappingURL=datatable.css.map */
+}/*# sourceMappingURL=datatable.css.map */
