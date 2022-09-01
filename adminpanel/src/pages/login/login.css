@@ -12,10 +12,15 @@
   background-image: linear-gradient(109.6deg, rgb(156, 252, 248) 11.2%, rgb(110, 123, 251) 91.1%);
 }
 
+.title {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
 .cover {
   background-color: white;
   width: 35em;
-  height: 30em;
+  height: 33em;
   position: relative;
   border-radius: 1em;
   box-shadow: 0 0.188em 1.55em rgb(156, 156, 156);
@@ -73,6 +78,7 @@
   background-color: #3b5998;
   color: white;
   text-align: center;
+  margin-right: 20px;
 }
 
 .google {
@@ -93,11 +99,12 @@
 .upper-Text {
   align-self: flex-start;
   margin-left: 60px;
+  margin-top: 20px;
 }
 
 input {
   border: none;
-  background-color: rgb(229, 226, 226);
+  background-color: rgb(242, 242, 242);
   height: 4em;
   width: 80%;
   border-radius: 0.25em;
@@ -128,6 +135,7 @@ input:focus {
   border-radius: 0.25em;
   cursor: pointer;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .signup-text {
@@ -138,6 +146,7 @@ input:focus {
 
 .gray-text {
   color: gray;
+  margin-top: 15px;
 }
 
 .login-btnn:hover {

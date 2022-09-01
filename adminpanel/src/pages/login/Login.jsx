@@ -48,7 +48,7 @@ const Login = () => {
   return (
     <div className="page">
       <div className="cover">
-        <h1>Login</h1>
+        <h1 className="title">Login</h1>
         <div className="alt-loginn">
           <div class="facebook btn">
             <i class="fa-brands fa-square-facebook icon"></i> Facebook
@@ -61,7 +61,7 @@ const Login = () => {
         <input
           type="text"
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="username"
+          placeholder="Username"
         />
         <h4 className="upper-Text">
           Password <span className="gray-text forgot">Forgot?</span>
@@ -70,7 +70,7 @@ const Login = () => {
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="password"
+          placeholder="Password"
         />
 
         <div className="login-btnn" onClick={handleLogin}>
