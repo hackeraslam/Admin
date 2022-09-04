@@ -3,7 +3,7 @@ import { useState } from "react";
 import { auth } from "../../firebse";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import "./Signup.css";
+import "./Signup.scss";
 
 import axios from "axios";
 function Signup() {
@@ -60,22 +60,30 @@ function Signup() {
   return (
     <div className="page">
       <div className="cover-signup">
-        <h1>Create Account</h1>
+        <p className="heading">Create Account</p>
+        <p className="info_text">Name</p>
         <input
+          className="input"
           type="text"
           placeholder="Name"
           onChange={(e) => {
             setName(e.target.value);
           }}
         />
+        <p className="info_text">Username</p>
+
         <input
+          className="input"
           type="text"
           placeholder="username"
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         />
+        <p className="info_text">Email</p>
+
         <input
+          className="input"
           type="mail"
           placeholder="Email"
           id="email"
@@ -83,29 +91,41 @@ function Signup() {
             setEmail(e.target.value);
           }}
         />
+        <p className="info_text">Password</p>
+
         <input
+          className="input"
           type="password"
-          placeholder="password"
+          placeholder="Password"
           required
           onChange={(e) => {
             setPassword(e.target.value);
           }}
         />
+        <p className="info_text">Phone</p>
+
         <input
+          className="input"
           type="number"
           placeholder="Phone"
           onChange={(e) => {
             setPhone(e.target.value);
           }}
         />
+        <p className="info_text">Address</p>
+
         <input
+          className="input"
           type="text"
           placeholder="Address"
           onChange={(e) => {
             setAddress(e.target.value);
           }}
         />
+        <p className="info_text">Country</p>
+
         <input
+          className="input"
           type="text"
           placeholder="Country"
           onChange={(e) => {
@@ -116,15 +136,17 @@ function Signup() {
         <div className="login-btn" onClick={handleSignup}>
           Create Account
         </div>
-        <div
-          className="login-btn signup"
-          onClick={() => {
-            navv("/login");
-          }}
-        >
-          Login
-        </div>
-
+        <p className="already-text">
+          Already Member?{" "}
+          <span
+            className="login-here"
+            onClick={() => {
+              navv("/login");
+            }}
+          >
+            Login Here
+          </span>
+        </p>
         <div className={popupStyle}>
           <h3>SignUp Failed</h3>
           <p>Error While Creating Account</p>

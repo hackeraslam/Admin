@@ -16,17 +16,26 @@
   );
 }
 
+.heading {
+  font-size: 30px;
+}
+.info_text {
+  align-self: start;
+  margin-left: 10%;
+  margin-top: 10px;
+}
 .cover-signup {
   background-color: white;
   width: 35em;
-  height: 43em;
+  height: auto;
   position: relative;
   border-radius: 1em;
   box-shadow: 0 0.188em 1.55em rgb(156, 156, 156);
   display: flex;
+  flex-wrap: wrap;
+
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
 }
 
 .alt-login {
@@ -47,19 +56,30 @@
   cursor: pointer;
 }
 
-input {
+.input {
   border: none;
-  background-color: rgb(229, 226, 226);
-  height: 4em;
+  background-color: rgb(253, 246, 246);
+  height: 30px;
   width: 80%;
   border-radius: 0.25em;
   text-align: left;
-  padding: 2em;
-  margin: 10px;
+  padding: 20px;
+}
+.info_text {
+  margin-bottom: 5px;
+}
+.input:focus {
+  outline-color: rgb(32, 177, 255);
+}
+.already-text {
+  margin-bottom: 10px;
+  color: rgb(115, 114, 114);
 }
 
-input:focus {
-  outline-color: rgb(32, 177, 255);
+.login-here {
+  color: rgb(63, 63, 63);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .login-btn {
@@ -72,10 +92,8 @@ input:focus {
   transition: 0.5s;
   border-radius: 0.25em;
   cursor: pointer;
-}
-
-.signup {
-  background-color: rgb(255, 0, 225);
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .login-btn:hover {
